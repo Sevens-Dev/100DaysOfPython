@@ -1,31 +1,8 @@
+from Text_Adventure_Art import ascii_art
 has_key = False
 has_machete =  False
 
 print('''
-   ..=*#*=:......                                 
-   .-=**=-:-=-=+**=:.....                         
-  ..=++++++++===+------+##+-:......               
-  .:##+=---::=+=:=-=======:-:::-*##*=::...        
-      .#@@@@@%+#++*+=+=-=-==+-==+-:-:::-----...   
-        ..*@@@@@@@@@%*=-:-.:-==+==+:-===++=*=-.   
-       ...-#@@@@@@%%%%%@@@@%*=----:::=++#**##==:  
-   ..:=%%%@@@@@@@@%%###%##%%%%@@@@%*++=++*#*#%+=..
-.:*%@%%%%%%@@@@%@%#%%%%%%%%%%%%%%%%%%%*==+##*##+=.
-.:=-=*#@%%%%%%%%%%#%#%%%%%%%%%%%%%%%#%%%%*=+***+=.
-.:+**+=-:-=*#%@@@%#%%%%%##%%%%%%%%%%%%%%%%%+==**..
-.:+*++++**+==:-=+##%%%%%%%%%%%%%%%%%%%%%*=+###*-  
-..=+*####++*+***+=-::-+*#%%%%%%%%%%%%*==*%####=.  
-..=***####********+++*+=--:-=#%@@%#=-+##*###*+-   
- .=***++****+::++****+++*****==-:-+*#*###**+++:   
-..-+++****+++.-+==##**##**++***:-=***#**++****:   
-..:==+++++**#*=++=+***#+****##*-==#*+++++****+.   
- ..:---++======+*%***++********:====++***#**+=.   
-     ...::-=++====++*###**++**+:==++*####*+=-..   
-        ....:-:-======+=*#*#**+:-=*#****+=:..     
-              ...::-====+++++++:-+****+-:.        
-                 ....:::-=++*=+--+**+-:..         
-                       ...:---=--=--...           
-                         .....-::-..
 Welcome to Treasure Island!
 You must find the treasure and leave before nightfall, else the curse will never let you leave!
 ''')
@@ -39,12 +16,13 @@ Forward, Left, or Right?\n''')
 
     if startDirection == 'Forward':
         pathSplitDirection = input('''You venture into the dense forest and the path splits.
-        Which direct will you take? Forward or Left?\n''')
+Which direction will you take? Forward or Left?\n''')
         if pathSplitDirection == 'Forward' and has_machete == True:
             path2Direction = input("You found some ruins, search or go back?\n")
             if path2Direction == 'search' and has_key == True:
                 print('''You find a chest and unlock it, finding more gold than you could ever spend.
                 Congrats, you are rich.''')
+                ascii_art()
                 break
             elif path2Direction == 'search' and has_key == False:
                 print('''You find a chest, but its locked. There must be a key somewhere.
